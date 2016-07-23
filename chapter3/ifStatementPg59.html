@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+  <html lang='en'>
+  <head>
+    <title> If Statement | JavaScript</title>
+  </head>
+  <body style="background-color: #dff263; font-family: Georgia">
+    <script>
+      var degFahren = parseInt(prompt("Enter the degrees Fahrenheit.", 32), 10);
+      var degCent = (5/9) * (degFahren - 32);
+
+      document.write(degFahren + "\xB0F is " + degCent + "\xB0C.<br>");
+
+      if(degCent < 0) {
+        document.write("<br>That's below the freezing point of water.<br>");
+
+      }
+
+      if(degCent == 100) {
+        document.write("<br>That's the boiling point of water.<br>");
+        document.write("<br>Hello, sup?<br>");
+      }
+
+    </script>
+  </body>
+</html>

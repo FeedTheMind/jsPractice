@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+  <html lang='en'>
+  <head>
+    <title>JavaScript | Exercise</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var userAge = parseInt(prompt('Please, enter your age.', "Type away."), 10);
+      
+      if (userAge == 0) {
+        alert('So, are you a baby?');
+      } else if (userAge < 0 || userAge > 200) {
+        alert('Are you telling the truth?');
+      } else {
+        alert('That\'s a good age.');
+      }
+    </script>
+  </body>
+</html>

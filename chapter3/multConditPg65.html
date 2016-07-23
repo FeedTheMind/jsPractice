@@ -1,0 +1,27 @@
+<html>
+  <head lang='en'>
+    <meta charset="UTF-8">
+    <title>Multiple Conditions</title>
+  </head>
+  <body style='background-color: #dff263; font-family: Georgia;'>
+    <script>
+      var myAge = parseInt(prompt('Enter your age, please.',''), 10);
+
+      if (myAge >= 0 && myAge <= 10) {
+        document.write("The variable myAge is between 0 and 10.<br>");
+      }
+
+      if (!(myAge >= 0 && myAge <= 10)) {
+        document.write("The variable myAge is not between 0 and 10.<br>");
+      }
+
+      if (myAge >= 80 || myAge <= 10) {
+        document.write("The variable myAge is 80 or above, or 10 or below.<br>");
+      }
+
+      if ((myAge >= 30 && myAge <= 40) || (myAge >= 80 && myAge <= 100)) {
+        document.write("The variable myAge is between 30 and 40, or it is between 80 and 100.<br>");
+      }
+    </script>
+  </body>
+</html>

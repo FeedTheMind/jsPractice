@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+  <html lang='en'>
+  <head>
+    <title>Conversion | Celsius to Fahrenheit</title>
+  </head>
+  <body style="background-color: linen; font-family: Georgia;">
+    <script>
+      var centigradePrompt = prompt('Choose a number from 0 to 100.');
+
+      if(centigradePrompt < 0 || centigradePrompt > 100) {
+        document.write("Please, reload the page and provide a number from 0 to 100.")
+      } else {
+        // equation: degFahren = 9 / 5 * degCent + 32
+
+        var selectedNumber = parseInt(centigradePrompt);
+
+        var cels2Fahre = (9/5) * selectedNumber + 32;
+
+        document.write('Your number, ' + centigradePrompt + ' \xB0C,' + " equals " + cels2Fahre + ' \xB0F.');
+      }
+    </script>
+  </body>
+</html>

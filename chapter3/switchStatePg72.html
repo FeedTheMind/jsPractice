@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Using the Switch Statement</title>
+  </head>
+  <body style='background-color: #dff263; font-family: Georgia;'>
+    <script>
+      var secretNumber = prompt('Pick a number between 1 and 5.', '');
+
+      secretNumber = parseInt(secretNumber, 10);
+
+      switch (secretNumber) {
+        case 1: 
+          // document.write("Too low!");
+          // break;
+
+        case 2: 
+          document.write("Too low!");
+          break;
+
+        case 3: 
+          document.write("You guessed the secret number!");
+          break;
+
+        case 4: 
+          // document.write("Too high!");
+          // break;
+
+        case 5: 
+          document.write("Too high!");
+          break;
+
+        default:
+          document.write("You did not enter a number between 1 and 5.");
+          break;
+      }
+
+      if (secretNumber != 3) {
+        document.write("<br>Refresh and guess again."); 
+      } else document.write("<br>Congratulations!");
+    </script>
+  </body>
+</html>
