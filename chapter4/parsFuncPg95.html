@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Parsing Functions</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function toCelsius(degFahren) {
+        var degCel = 5/9 * (degFahren -32);
+        document.write(degFahren + " Fahrenheit is " + degCel + " Celsius.<br>");
+      }
+
+      function convert(converter, temperature) {
+        converter(temperature);
+      }
+
+      convert(toCelsius, 75);
+    </script>
+  </body>
+</html>
