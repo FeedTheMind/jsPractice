@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+  <html lang='en'>
+  <head>
+    <title>Creating a Function</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function documentTimeTable(timesTable, timesStart, timesEnd) {
+        for(; timesStart <= timesEnd; timesStart++) {
+          document.write(timesTable + " * " + timesStart + " = " + timesStart * timesTable + "<br>");
+        }
+      }
+
+      var timesTable;
+
+      while ((timesTable  = prompt("Enter the times table.", -1)) != -1) {
+        while (isNaN(timesTable) == true) {
+          timesTable = prompt(timesTable + " is not a " + "valid number. Please retry.", -1);
+        }
+        
+        if (timesTable == -1) {
+          break;
+        }
+
+        document.write("<br>The " + timesTable + " times tables.<br>");
+        documentTimeTable(timesTable, 6, 24);
+      }
+    </script>
+  </body>
+</html>
