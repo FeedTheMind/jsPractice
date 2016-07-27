@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+  <html lang='en'>
+  <head>
+    <title>Creating a Function</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function documentTimeTable(timesTable, timesStart, timesEnd) {
+        for(; timesStart <= timesEnd; timesStart++) {
+          document.write(timesTable + " * " + timesStart + " = " + timesStart * timesTable + "<br>");
+        }
+      }
+
+      documentTimeTable(5, 6, 20);
+
+      documentTimeTable(4, 8, 12);
+    </script>
+  </body>
+</html>
