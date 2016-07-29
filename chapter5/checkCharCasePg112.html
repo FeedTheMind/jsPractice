@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+  <html lang='en'>
+  <head>
+    <title>Checking Character's Case</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function checkCharType(charToCheck) {
+        var returnValue = "0";
+        var charCode = charToCheck.charCodeAt(0);
+        // Note: Didn't specify indexes for below charCodeAt methods because defaults to index 0.
+        if (charCode >= "A".charCodeAt() && charCode <= "Z".charCodeAt()) {
+          returnValue = "U";
+        } else if (charCode >= "a".charCodeAt() && charCode <= "z".charCodeAt()) {
+          returnValue = "L";
+        } else if (charCode >= "0".charCodeAt() && charCode <= "9".charCodeAt()) {
+          returnValue = "N";
+        }
+        return returnValue;
+      }
+
+      var myString = prompt("Enter some text.", "Hello!");
+
+      switch (checkCharType(myString)) {
+        case "U":
+          document.write("The first character was uppercase.");
+          break;
+        case "L":
+          document.write("The first character was lowercase.");
+          break;
+        case "N":
+          document.write("The first character was a number.");
+          break;
+        default:
+          document.write("The first character was neither a number nor a character.");
+      }        
+    </script>
+  </body>
+</html>
