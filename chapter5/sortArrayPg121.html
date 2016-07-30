@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+  <html lang='en'>
+  <head>
+    <title>Sorting an Array</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <code><var>var</var> myShopping = ['Eggs', 'Milk', 'Potatoes', 'Cereal', 'Bananas'];</code>
+    </p>
+    <script>
+      var myShopping = ['Eggs', 'Milk', 'Potatoes', 'Cereal', 'Bananas'];
+
+      var ord = parseInt(prompt('Enter 1 for alphabetical order ' + 'and -1 for reverse order.', 1));
+
+      if (ord === 1) {
+        myShopping.sort();
+        document.write(myShopping.join('<br>'));
+      } else if (ord === -1) {
+        myShopping.sort();
+        myShopping.reverse();
+        document.write(myShopping.join('<br>'))
+      } else {
+        document.write('That is not valid input. Please refresh and try again.');
+      }          
+    </script>
+  </body>
+</html>
