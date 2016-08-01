@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+  <html lang='en'>
+  <head>
+    <title>Writing Current Time to Website</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var greeting; 
+
+      var nowDate = new Date();
+      var nowHour = nowDate.getHours();
+      var nowMinute = nowDate.getMinutes();
+      var nowSecond = nowDate.getSeconds();
+
+      if (nowMinute < 10) {
+        nowMinute = '0' + nowMinute;
+      }
+
+      if (nowSecond < 10) {
+        nowSecond = '0' + nowSecond;
+      }
+
+      if (nowHour < 12) {
+        greeting = 'Good morning';
+      } else if (nowHour < 18) {
+        greeting = 'Good afternoon';
+      } else {
+        greeting = 'Good evening';
+      }
+
+      document.write('<h4>' + greeting + ' and welcome to my (very basic) website.</h4>');
+      document.write('According to your clock, the time is ' + nowHour + ':' + nowMinute + ':' + nowSecond + '.');
+    </script>
+    <p>
+      Note: above information was primarily created using <code>Date</code> methods.
+    </p>
+  </body>
+</html>
