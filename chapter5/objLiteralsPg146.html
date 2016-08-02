@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+  <html lang='en'>
+  <head>
+    <title>Using Object Literals</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function createPerson(firstName, lastName) {
+        return {
+          firstName: firstName,
+          lastName: lastName,
+          getFullName: function() {
+            return this.firstName + ' ' + this.lastName
+          },
+          greet: function(person) {
+            document.write('Hello, ' + person.getFullName() + '. I\'m ' + this.getFullName() + '.');
+          }
+        }
+      }
+
+      var johnDoe = createPerson('John', 'Doe');
+      var janeDoe = createPerson('Jane', 'Doe');
+
+      johnDoe.greet(janeDoe);
+
+      var explanation = '<p>Note: a function to create a custom object was used to make the above example.</p>'
+
+      document.write(explanation);
+    </script>
+  </body>
+</html>
