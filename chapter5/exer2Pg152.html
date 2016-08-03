@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+  <html lang='en'>
+    <head>
+      <title>Obtaining a List of Animals</title>
+      <style>
+        body {
+          background-color: #dff263; 
+          font-family: Georgia;
+        }
+      </style>
+    </head>
+    <body>
+      <script>
+        var listOfAnimals = [], inputData;
+
+        while ((inputData = prompt('Enter an animal.', 'To exit, leave this blank.')) != '') {
+          listOfAnimals[listOfAnimals.length] = inputData;
+        }
+
+        listOfAnimals.sort();
+
+        var joinedList = listOfAnimals.join('<br>');
+
+        document.write('Here is your list in alphabetical order:<br>' + joinedList);
+      </script>
+    </body>
+</html>
