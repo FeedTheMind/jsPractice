@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+  <html lang='en'>
+  <head>
+    <title>Using the Date Type</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      var currentDate = new Date();
+      var futureDate = currentDate;
+
+      futureDate.setMonth(futureDate.getMonth() + 12);
+
+      document.write('The date 12 months from now is ' + futureDate.getDate() + ' ' + months[futureDate.getMonth()] + ' ' + futureDate.getFullYear() + '.');
+    </script>
+    <p>
+      Note: above information was mainly created with <code>Date</code> methods.
+    </p>
+  </body>
+</html>
