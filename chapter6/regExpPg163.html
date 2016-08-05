@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Checking Passphrase</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var input = prompt('Please enter a passphrase.', 'A-Z, a-z, or 0-9');
+
+      function isValid(text) {
+        var myRegExp = /[^a-z\d ]/i;
+        return !(myRegExp.test(text));
+      }
+
+      if (isValid(input)) {
+        document.write('Your passphrase contains valid characters.<br>');
+      } else {
+        document.write('Your passphrase contains one or more invalid characters.<br>');
+      }
+
+      document.write('<br>Note: this example produces <code>true</code> if the input is a combination of A-Z, a-z, or 0-9. Otherwise, it produces <code>false</code>.');
+    </script>
+  </body>
+</html>
