@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Splitting Fruit String</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <var>var</var>
+      <code>myListString = 'apple, 0.99 banana, 0.50, peach, 0.25, orange, 0.75';</code>
+    </p>
+    <script>
+      var myListString = 'apple, 0.99 banana, 0.50, peach, 0.25, orange, 0.75';
+      var theRegExp = /[^a-z]+/i;
+      var fruitArray = myListString.split(theRegExp);
+
+      document.write(fruitArray.join('<br>'));
+      document.write('<br>Note: this example splits a string that has fruits and numerical data, and returns only fruits.');
+    </script>
+  </body>
+</html>
