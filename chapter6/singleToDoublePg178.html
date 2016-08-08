@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Replacing Single Quotes with Double Quotes</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var text = "He said, 'My name is O'Connerly. Yes, that's right, O'Connerly.'";
+
+      document.write('Original: ' + text + '<br>');
+
+      var myRegExp = /\B'|'B/g;
+      text = text.replace(myRegExp, '"');
+
+      document.write('Corrected: ' + text + '<br>');
+      document.write('<br>Note: this example converts double quotes to single quotes, using <code>RegExp</code> and <code>replace()</code> method.');
+    </script>
+  </body>
+</html>
