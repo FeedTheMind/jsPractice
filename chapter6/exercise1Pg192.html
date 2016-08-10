@@ -24,7 +24,7 @@
     <p>
       Now, imagine that you have the following:<br>
       <code>
-        var myRegExp = new RegExp('(\b\w+\b) \1');<br>
+        <var>var</var> myRegExp = new RegExp('(\b\w+\b) \1');<br>
       </code>
       <br>Why would this not work, and how could you fix it?<br>
       <br>This would not work because a constructor object has been created with a string parameter. To fix this, add two backslashes, not one, before special characters.<br>Moreover, the global match ('g' modifier) should be passed to the second parameter, that the program does not stop after the first matched result.
