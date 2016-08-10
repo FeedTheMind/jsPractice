@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Exercise 1</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <p>What problem does the following code solve?</p>
+    <p>
+      <code>
+        <var>var</var> myString = 'This sentence has has a fault, and and we need to fix it.';<br>
+        <var>var</var> myRegExp = /(\b\w+\b) \1/g;<br>
+        myString = myString.replace(myRegExp, '$1');<br>
+      </code>
+    </p>
+    <p>
+      The above code matches and replaces the repeated words, "has has" and "and and."
+    </p>
+    <p>
+      Now, imagine that you have the following:<br>
+      <code>
+        var myRegExp = new RegExp('(\b\w+\b) \1');<br>
+      </code>
+      <br>Why would this not work, and how could you fix it?<br>
+      <br>This would not work because a constructor object has been created with a string parameter. To fix this, add two backslashes, not one, before special characters.<br>Moreover, the global match ('g' modifier) should be passed to the second parameter, that the program does not stop after the first matched result.
+    </p>
+  </body>
+</html>
