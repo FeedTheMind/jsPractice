@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>World Time</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var localTime = new Date();
+
+      var html = '<p>UTC Time is ' + localTime.toUTCString() + '.</p>';
+
+      html += 'Local time is ' + localTime.toLocaleString() + '.</p>';
+
+      html += '<p> Time-zone offset is ' + localTime.getTimezoneOffset() + '.</p>';
+
+      html += 'Using <code>toLocaleString()</code> gives ' + localTime.toLocaleTimeString() + '.</p>';
+
+      html += '<p>Using <code>toTimeString()</code> gives ' + localTime.toTimeString() + '.</p>';
+
+      html += '<p>Using <code>toLocaleDateString()</code> gives ' + localTime.toLocaleDateString() + '.</p>';
+
+      html += '<p>Using <code>toDateString()</code> gives ' + localTime.toDateString() + '.</p>';
+
+      document.write(html);
+    </script>
+  </body>
+</html>
