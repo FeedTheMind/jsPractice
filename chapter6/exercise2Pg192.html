@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Exercise 2</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      In the following sentence, write a regular expression that finds 
+      all occurrences of the word "a" and replaces them with "the":<br>"A 
+      dog walked in off a street and order a finest water."
+    </p>
+    <script>
+      function capFirstLetter(string) {
+        document.write(string.charAt(0).toUpperCase() + string.slice(1));
+      }
+
+      var dogString = 'A dog walked in off a street and ordered a finest water.<br>';
+
+      var myRegExp = /\b(a|A)\b/g;
+
+      var correction = dogString.replace(myRegExp, 'the');
+
+      capFirstLetter(correction);
+
+      document.write('<br>The <code>RegExp</code> used to solve this question is as follows: <code><var>var</var> myRegExp = /\\b(a|A)\\b/g;</code><br>')
+
+      document.write('<br>Note: the "replaced" sentence uses a function to capitalize the first letter of the new string.');
+    </script>
+  </body>
+</html>
