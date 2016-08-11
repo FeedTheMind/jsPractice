@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Exercise 3 | Chapter 6</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Imagine you have a website with a message board. 
+      Write a regular expression that removes barred words.<br>
+      For this exercise, a regular expression has been 
+      created that substitutes "fun" for "boring."
+    </p>
+    <script>
+      var originalString = 'Learning is boring. Never is learning not boring!<br>';
+      var myRegExp = /\bboring\b/gi;
+
+      var newString = originalString.replace(myRegExp, 'fun');
+
+      document.write('Original: ' + originalString);
+      document.write('New: ' + newString + '<br>');
+      document.write(
+        'Solution: <code><var>var</var> ' + 
+        'myRegExp = /\\bboring\\b/gi;</code> ' + 
+        'plus the <code>replace(myRegExp, \'fun\');</code> method.'
+      );
+    </script>
+  </body>
+</html>
