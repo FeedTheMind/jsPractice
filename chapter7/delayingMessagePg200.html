@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Delaying a Message</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function delayingMessage() {
+        document.write('<p>This is a delayed message!</p>');
+        document.write('It was created using <code>setTimeout()</code> method.')
+      }
+
+      setTimeout(delayingMessage, 2000);
+    </script>
+  </body>
+</html>

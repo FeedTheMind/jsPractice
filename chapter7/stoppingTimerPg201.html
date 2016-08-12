@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Stopping a Timer</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function doThisLater() {
+        document.write('Hello, this is a delayed message.');
+      }
+
+      var timerID = setTimeout(doThisLater, 2000);
+
+      clearTimeout(timerID);
+
+      document.write('Note: a delayed message should have appeared, but <code>clearTimeout()</code> method was used to stop it.');
+    </script>
+  </body>
+</html>
