@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Working with UTC Date and Time</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var myDate = new Date();
+      myDate.setUTCHours(12);
+      myDate.setUTCMinutes(0);
+      myDate.setUTCSeconds(0);
+
+      var html = '<p>' + myDate.toUTCString() + '</p>';
+      html += '<p>' + myDate.toLocaleString() + '</p>';
+
+      document.write(html);
+      document.write(
+        'Note: the second paragraph is today\'s date and a ' + 
+        'time that is 12:00:00 UTC converted to the equivalent local time, 8:00:00 AM.'
+      );
+    </script>
+  </body>
+</html>
