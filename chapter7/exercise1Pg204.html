@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Exercise 1 | Chapter 7</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var days = [
+        'Sunday', 'Monday', 'Tuesday', 
+        'Wednesday', 'Thursday', 'Friday', 'Saturday'
+      ];
+
+      var year = prompt('Enter the four-digit year you were born.', '2016');
+      var month = prompt('Enter the month (1-12) you were born.', '8');
+      var date = prompt('Enter the day you were born.', '5');
+
+      var birthday = new Date(year, (month -1), date);
+
+      document.write('You were born on a ' + days[birthday.getDay()] + '.');
+      document.write('<p>Note: this program determines the day of the week of a person\'s birth.</p>');
+    </script>
+  </body>
+</html>
