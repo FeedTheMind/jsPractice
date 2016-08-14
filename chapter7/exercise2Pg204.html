@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Exercise 2 | Chapter 7</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+        text-align: center;
+        font-size: 2.5em;
+      }
+      div {
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Military Time</h1>
+    <div id="output"></div>
+    <script>
+      function updateTime() {
+        var time = new Date();
+
+        var hours = time.getHours();
+        var minutes = time.getMinutes();
+        var seconds = time.getSeconds();
+        
+        if (hours < 10) {
+          hours = '0' + hours;
+        }
+
+        if (minutes < 10) {
+          minutes = '0' + minutes;
+        } 
+
+        if (seconds < 10) {
+          seconds = '0' + seconds;
+        }
+
+        var combined = hours + ':' + minutes + ':' + seconds;
+        document.getElementById('output').innerHTML = combined;
+      }
+
+      setInterval(updateTime, 1000);
+    </script>
+  </body>
+</html>
