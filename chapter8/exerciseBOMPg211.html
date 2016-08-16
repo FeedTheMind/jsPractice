@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Latitude and Longitude</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+    </style>
+  </head>
+  <body>
+    <script>
+      function geoSuccess(position) {
+        var coords = position.coords;
+        var latitude = coords.latitude;
+        var longitude = coords.longitude;
+
+        alert(
+          'Your latitude is ' +
+          latitude +
+          ', and your longitude is ' +
+          longitude + '.'
+        ); 
+      }
+
+      function geoError(errorObj) {
+        alert(errorObj.message);
+      }
+
+      navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+    </script>
+  </body>
+</html>
