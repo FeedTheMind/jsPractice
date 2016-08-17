@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Setting Colors | User's Screen Color Depth</title>
+    <style>
+      body {
+        font-family: Georgia, sans-serif;
+    </style>
+  </head>
+  <body>
+    <script>
+      var colorDepth = window.screen.colorDepth;
+
+      switch (colorDepth) {
+        case 1:
+        case 4:
+          document.bgColor = 'pink';
+          break;
+        case 8:
+        case 15:
+        case 16:
+          document.bgColor = 'linen';
+          break;
+        case 24:
+        case 32:
+          document.bgColor = 'skyblue';
+          break;
+        default: 
+          document.bgColor = 'white';
+      }
+
+      document.write('Your screen supports ' + colorDepth + '-bit color.');
+    </script>
+  </body>
+</html>
