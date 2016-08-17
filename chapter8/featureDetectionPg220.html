@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Using Feature Detection</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+    </style>
+  </head>
+  <body>
+    <script>
+      function geoSuccess(position) {
+        var coords = position.coords;
+        var latitude = coords.latitude;
+        var longitude = coords.longitude;
+
+        var message = 'Your latitude is at ' + latitude + 
+          ', and your longitude is at ' + longitude + '.';
+
+        alert(message);
+      }
+
+      function geoError(errorObj) {
+        alert(errorObj.message);
+      }
+
+      if (typeof navigator.geolocation != 'undefined') {
+        navigator.geolocation.getCurrentPosition(geoSuccess, geoError); 
+      } else {
+        alert('This page uses geolocation, but your browser doesn\'t support it.');
+      }
+    </script>
+  </body>
+</html>
