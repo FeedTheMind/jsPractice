@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Exercise 2 | Chapter 8</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <img src='' style='width:200px;height:150px' alt='Flag'>
+    <script>
+      function getRandomFlag() {
+        var flags = [
+          'usa.gif',
+          'canada.gif',
+          'jamaica.gif',
+          'mexico.gif'
+        ];
+
+        var random = Math.floor(Math.random() * flags.length) + 0;
+      
+        document.images[0].src = flags[random];
+      }
+
+      setTimeout(getRandomFlag);
+      setInterval(getRandomFlag, 1500);
+    </script>
+    <h1>Flags</h1>
+  </body>
+</html>
