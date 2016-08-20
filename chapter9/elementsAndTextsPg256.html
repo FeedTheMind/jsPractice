@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Creating HTML Elements and Text with DOM Methods</title>
+    <style>
+      body {
+        background-color: #dff263;
+        font-family: Georgia, sans-serif; 
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var newText = document.createTextNode('Heading');
+
+      var newElem = document.createElement('h1');
+
+      newElem.appendChild(newText);
+      document.body.appendChild(newElem);
+
+      newText = document.createTextNode('This is a paragraph.');
+      newElem = document.createElement('p');
+
+      newElem.appendChild(newText);
+      document.body.appendChild(newElem);
+
+      document.write('Note: above information was created with DOM methods.');
+    </script>
+  </body>
+</html>
