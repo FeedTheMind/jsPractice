@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Navigating the DOM</title>
+    <style>
+      body {
+        background-color: #dff263; 
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id='heading'>I'm a Heading</h1>
+    <p id='paragraph'>And I'm a paragraph.</p>
+    <script>
+      var htmlElement; // stores reference to <html>
+      var headElement; // <head>
+      var bodyElement; // <body>
+      var h1Element; // <h1>
+      var pElement; // <p>
+
+      htmlElement = document.documentElement;
+      headElement = htmlElement.firstChild;
+
+      alert(headElement.tagName);
+
+      if (headElement.nextSibling.nodeType == 3) {
+        bodyElement = headElement.nextSibling.nextSibling;
+      } else {
+        bodyElement = headElement.nextSibling;
+      }
+
+      alert(bodyElement.tagName);
+
+      if (bodyElement.firstChild.nodeType == 3) {
+        h1Element = bodyElement.firstChild.nextSibling;
+      } else {
+        h1Element = bodyElement.firstChild;
+      }
+
+      alert(h1Element.tagName);
+
+      h1Element.style.fontFamily = 'Georgia';
+
+      if (h1Element.nextSibling.nodeType == 3) {
+        pElement = h1Element.nextSibling.nextSibling;
+      } else {
+        pElement = h1Element.nextSibling;
+      }
+
+      alert(pElement.tagName);
+      pElement.style.fontFamily = 'Georgia';
+
+      if (pElement.previousSibling.nodeType == 3) {
+        h1Element = pElement.previousSibling.previousSibling;
+      } else {
+        h1Element = pElement.previousSibling;
+      }
+
+      document.write('Note: this exercise is to understand the document object model (DOM) better.');
+    </script>
+  </body>
+</html>
