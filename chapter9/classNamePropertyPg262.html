@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Using the className Property and Style Object</title>
+    <style>
+      .new-style {
+        text-decoration: underline;
+        font-style: italic;
+        font-family: Georgia;
+      }
+    </style>
+  </head>
+  <body id='color'>
+    <div id='divAdvert'>
+      Here is an advertisement.
+    </div>
+    <script>
+      var divAdvert = document.getElementById('divAdvert');
+      var idColor = document.getElementById('color');
+
+      divAdvert.className = 'new-style';
+      idColor.style.backgroundColor = '#dff263';
+    </script>
+  </body>
+</html>
