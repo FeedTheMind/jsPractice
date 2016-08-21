@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Using the Style Object</title>
+    <style>
+      #divAdvert {
+        font: 12pt Georgia;
+      }
+    </style>
+  </head>
+  <body id='color'>
+    <div id='divAdvert'>
+      Here is an advertisement.
+    </div>
+    <script>
+      var divAdvert = document.getElementById('divAdvert');
+      var idColor = document.getElementById('color');
+      
+      divAdvert.style.fontStyle = 'italic';
+      divAdvert.style.textDecoration = 'underline';
+      idColor.style.backgroundColor = '#dff263';
+    </script>
+  </body>
+</html>
