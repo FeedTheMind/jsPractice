@@ -7,11 +7,52 @@
         background-color: #dff263; 
         font-family: Georgia, sans-serif;
       }
+
+      td {
+        border: 1px solid black;
+        padding: 5px;
+      }
     </style>
   </head>
   <body>
     <script>
-      
+      var tabElem = document.createElement('table');
+      var trElem1 = document.createElement('tr');
+      var tdElem1 = document.createElement('td');
+      var tdElem2 = document.createElement('td');
+      var tdElem3 = document.createElement('td');
+
+      var textNode1 = document.createTextNode('Cell');
+      var textNode2 = document.createTextNode('Life');
+      var textNode3 = document.createTextNode('Cycle');
+
+      var docNavigate = document.body;
+
+      docNavigate.appendChild(tabElem);
+
+      docNavigate = docNavigate.lastChild;
+
+      docNavigate.appendChild(trElem1);
+
+      docNavigate = docNavigate.lastChild;
+
+      docNavigate.appendChild(tdElem1);
+      docNavigate.appendChild(tdElem2);
+      docNavigate.appendChild(tdElem3);
+
+      docNavigate = docNavigate.firstChild;
+
+      docNavigate.appendChild(textNode1);
+
+      docNavigate = docNavigate.nextSibling;
+
+      docNavigate.appendChild(textNode2);
+
+      docNavigate = docNavigate.nextSibling;
+
+      docNavigate.appendChild(textNode3);
+
+      document.write('Note: above table was created with DOM methods and properties.');
     </script>
   </body>
 </html>
