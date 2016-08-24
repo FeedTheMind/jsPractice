@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Displaying Images with Standard Event Handler</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+      img {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <img id='img0' src='usa.gif' style='width:200px;height:150px' alt='Flag'>
+    <script>
+      var myImages = [
+        'usa.gif',
+        'canada.gif',
+        'jamaica.gif',
+        'mexico.gif'
+      ];
+
+      function changeImg(e) {
+        var el = e.target;
+        var newImgNumber = Math.round(Math.random() * 3);
+
+        while (el.src.indexOf(myImages[newImgNumber]) != -1) {
+          newImgNumber = Math.round(Math.random() * 3);
+        }
+
+        el.src = myImages[newImgNumber];
+      }
+
+      document.getElementById('img0').addEventListener('click', changeImg);
+    </script>
+    <h2>Click away!</h2>
+  </body>
+</html>
