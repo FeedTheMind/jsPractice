@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adding and Removing Multiple Event Listeners</title>
+    <style>
+      body {
+        background-color: #dff263;
+        font-family: Georgia, sans-serif;
+      }
+      img {
+        cursor: pointer;
+      }
+      .center {
+        text-align: center;
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='center'>
+      <img id='img0' src='usa.gif' alt='flag'>
+      <div id='status'></div>
+    </div>
+    <script>
+      var myImages = [
+        'usa.gif',
+        'canada.gif',
+        'jamaica.gif',
+        'mexico.gif'
+      ];
+
+      function changeImg(e) {
+        var el = e.target;
+        var newImgNumber = Math.round(Math.random() * 3);
+
+        while (el.src.indexOf(myImages[newImgNumber]) != -1) {
+          newImgNumber = Math.round(Math.random() * 3);
+        }
+        el.src = myImages[newImgNumber];
+      }
+
+      function updateStatus(e) {
+        var el = e.target;
+        var status = document.getElementById('status');
+
+        status.innerHTML = 'The image changed to another flag.';
+
+        if (el.src.indexOf('mexico') > -1) {
+          el.removeEventListener('click', changeImg);
+          el.removeEventListener('click', updateStatus);
+          status.innerHTML = 'Clicking no longer works; ' +
+          'the event listeners (handlers) have been removed.';
+        }
+      }
+
+      var imgObj = document.getElementById('img0');
+
+      imgObj.addEventListener('click', changeImg);
+      imgObj.addEventListener('click', updateStatus);
+    </script>
+  </body>
+</html>
