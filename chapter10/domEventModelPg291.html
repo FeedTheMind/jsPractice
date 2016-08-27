@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Using the DOM Event Model</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+      .underline {
+        color: red;
+        text-decoration: underline;
+      }
+      div {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Click here.</p>
+    <p>Here.</p>
+    <p>Or here.</p>
+    <div>Click anywhere, actually!</div>
+    <script>
+      function handleEvent(e) {
+        var target = e.target;
+        var type = e.type;
+
+        if (target.tagName == 'P') {
+          if (type == 'mouseover') {
+            target.className = 'underline';
+          } else if (type == 'mouseout') {
+            target.className = '';
+          }
+        }
+
+        if (type == 'click') {
+          alert('You clicked the mouse button at coordinates X: ' +
+            e.clientX + ' and Y: ' + e.clientY + '.');
+        }
+      }
+
+      document.addEventListener('mouseover', handleEvent);
+      document.addEventListener('mouseout', handleEvent);
+      document.addEventListener('click', handleEvent);
+    </script>
+  </body>
+</html>
