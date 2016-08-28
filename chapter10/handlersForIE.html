@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Adding and Removing Multiple Event Handlers in Old IE</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <img src='usa.gif' alt='Flag' id='img0'>
+    <div id="status"></div>
+    <script>
+      var myImages = [
+        'usa.gif',
+        'canada.gif',
+        'jamaica.gif',
+        'mexico.gif'
+      ];
+
+      function changeImg(e) {
+        var el = e.srcElement;
+        var newImgNumber = Math.round(Math.random() * 3);
+
+        while (el.src.indexOf(myImages[newImgNumber]) != -1) {
+          newImgNumber = Math.round(Math.random() * 3);
+        }
+
+        el.src = myImages[newImgNumber];
+      }
+
+      function updateStatus(e) {
+        var el = e.srcElement;
+        var status = document.getElementById('status');
+
+        status.innerHTML = 'The image has changed to ' + el.src + '.';
+
+        if (el.src.indexOf('mexico') > -1) {
+          el.detachEvent('onclick', changeImg);
+          el.detachEvent('onclick', updateStatus);
+        }
+      }
+
+      var imgObj = document.getElementById('img0');
+
+      imgObj.attachEvent('onclick', updateStatus);
+      imgObj.attachEvent('onclick', changeImg);
+    </script>
+  </body>
+</html>
