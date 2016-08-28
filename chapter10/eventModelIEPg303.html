@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Using IE Event Model</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+      .underline {
+        color: red;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <p>Again, just another paragraph.</p>
+    <script>
+      function handleEvent(e) {
+        var target = e.srcElement;
+        var type = e.type;
+
+        if (target.tagName == 'P') {
+          if (type == 'mouseover') {
+            target.className = 'underline';
+          } else if (type == 'mouseout') {
+            target.className = '';
+          }
+        }
+
+        if (type == 'click') {
+          alert('You clicked the mouse button at the X: ' + 
+             e.clientX + ' and Y: ' + e.clientY + 'coordinates.');
+        }
+      }
+
+      document.attachEvent('onmouseover', handleEvent);
+      document.attachEvent('onmouseout', handleEvent);
+      document.attachEvent('onclick', handleEvent);
+    </script>
+  </body>
+</html>
