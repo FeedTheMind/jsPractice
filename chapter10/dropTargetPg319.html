@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Creating a Drop Target</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+      .drop-zone {
+        width: 300px;
+        padding: 20px;
+        border: 2px dashed #000;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Highlight this text, click it, and then drag down.</p>
+    <div id='dropZone' class='drop-zone'>Drop Zone!</div>
+    <div id='dropStatus'></div>
+    <script>
+      function dragEnterExit(e) {
+        dropStatus.innerHTML = "You're dragging something!";
+        if (e.type == 'dragleave') {
+          dropStatus.innerHTML = '';
+        }
+      }
+
+      var dropZone = document.getElementById('dropZone');
+
+      var dropStatus = document.getElementById('dropStatus');
+
+      dropZone.addEventListener('dragenter', dragEnterExit);
+      dropZone.addEventListener('dragleave', dragEnterExit);
+    </script>
+  </body>
+</html>
