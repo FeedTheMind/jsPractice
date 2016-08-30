@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Full Drag and Drop</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+      [data-drop-target] {
+        height: 400px;
+        width: 200px;
+        margin: 2px;
+        background-color: gainsboro;
+        float: left;
+      }
+      .drag-enter {
+        border: 2px dashed #000;
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+      }
+      .navy {
+        background-color: navy;
+        color: white;
+      }
+      .red {
+        background-color: red;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-drop-target='true'>
+      <div id='box1' draggable='true' class='box navy'>Move me!</div>
+      <div id='box2' draggable='true' class='box red'>Don't forget me!</div>
+    </div>
+    <div data-drop-target='true'></div>
+    <script>
+      function handleDragStart(e) {
+        e.dataTransfer.setData('text', this.id);
+      }
+
+      function handleDragEnterLeave(e) {
+        if (e.type == 'dragenter') {
+          this.className = 'drag-enter'
+        } else {
+          this.className = '';
+        }
+      }
+
+      function handleOverDrop(e) {
+        e.preventDefault();
+
+        if (e.type != 'drop') {
+          return;
+        }
+
+        var draggedId = e.dataTransfer.getData('text');
+        var draggedE1 = document.getElementById(draggedId);
+
+        if (draggedE1.parentNode == this) {
+          return;
+        }
+
+        draggedE1.parentNode.removeChild(draggedE1);
+
+        this.appendChild(draggedE1);
+        this.className = '';
+      }
+
+      var draggable = document.querySelectorAll('[draggable]');
+      var targets = document.querySelectorAll('[data-drop-target]');
+
+      for (var i = 0; i < draggable.length; i++) {
+        draggable[i].addEventListener('dragstart', handleDragStart);
+      }
+
+      for (i = 0; i < targets.length; i++) {
+        targets[i].addEventListener('dragover', handleOverDrop);
+        targets[i].addEventListener('drop', handleOverDrop);
+        targets[i].addEventListener('dragenter', handleDragEnterLeave);
+        targets[i].addEventListener('dragleave', handleDragEnterLeave);
+      }
+    </script>
+  </body>
+</html>
