@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Dropping Objects on a Target</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+      .drop-zone {
+        width: 300px;
+        padding: 20px;
+        border: 2px dashed #000;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <p draggable='true'>Drag and drop this text.</p>
+    <div id='dropZone' class='drop-zone'>Drop Zone!</div>
+    <div id='dropStatus'></div>
+    <script>
+      function dragDropHandler(e) {
+        e.preventDefault();
+
+        if (e.type == 'dragover') {
+          dropZone.innerHTML = "You're dragging over the drop zone!";
+        } else if (e.type == 'dragleave') {
+          dropZone.innerHTML = 'Drop Zone!';
+        } else {
+          dropZone.innerHTML = 'You dropped something!';
+        }
+      }
+
+      var dropZone = document.getElementById('dropZone');
+
+      var dropStatus = document.getElementById('dropStatus');
+
+      dropZone.addEventListener('dragover', dragDropHandler);
+      dropZone.addEventListener('drop', dragDropHandler);
+      dropZone.addEventListener('dragleave', dragDropHandler);
+    </script>
+  </body>
+</html>
