@@ -30,4 +30,5 @@ var evt = {
     if (window.attachEvent && !window.addEventListener) {
       return true;
     }
+  }
 };
