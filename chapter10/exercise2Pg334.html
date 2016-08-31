@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Exercise 2 | Chapter 10</title>
+    <style>
+      body {
+        background-color: #dff263; 
+        font-family: Georgia, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <img src='usa.gif' alt='Flag' id='img0'>
+    <div id='status'></div>
+    <p id='explanation'></p>
+    <script src='exercise1Pg334.js'></script>
+
+    <script>
+      var myImages = [
+        'usa.gif',
+        'canada.gif',
+        'jamaica.gif',
+        'mexico.gif'
+      ];
+
+      function changeImg(e) {
+        var el = evt.getTarget(e);
+
+        var newImgNumber = Math.round(Math.random() * 3);
+
+        while (el.src.indexOf(myImages[newImgNumber]) != -1) {
+          newImgNumber = Math.round(Math.random() * 3);
+        }
+
+        el.src = myImages[newImgNumber];
+      }
+
+      function updateStatus(e) {
+        var el = evt.getTarget(e);
+        var status = document.getElementById('status');
+
+        status.innerHTML = 'The image has changed.';
+
+        if (el.src.indexOf('mexico') > -1) {
+          evt.removeListener(el, 'click', changeImg);
+          evt.removeListener(el, 'click', updateStatus);
+          document.getElementById('explanation').innerHTML = 
+            'Note: clicking has now been disabled (removed).';
+        }
+      }
+
+      var imgObj = document.getElementById('img0');
+      
+      if (evt.isOldIE()) {
+        evt.addListener(imgObj, 'click', updateStatus);
+        evt.addListener(imgObj, 'click', changeImg);
+      } else {
+        evt.addListener(imgObj, 'click', changeImg);
+        evt.addListener(imgObj, 'click', updateStatus);
+      }
+    </script>
+  </body>
+</html>
