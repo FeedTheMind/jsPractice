@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Counting Button Clicks</title>
+    <style>
+      body {
+        background-color: #dff263;
+        font-family: Georgia, sans-serif;
+      }
+      .size{
+        width: 300px;
+        height: 100px;
+        font-weight: bold;
+        font-size: 1.5em;
+      }
+      form {
+        text-align: center;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <input class='size' type='button' name='myButton' value='Clicked 0 Times'>
+    </form>
+    <script>
+      var myButton = document.forms[0].myButton;
+      var numOfClicks = 0;
+
+      function myButtonClick() {
+        numOfClicks++;
+        if (numOfClicks == 1) {
+          myButton.value = 'Clicked ' + numOfClicks + ' Time';
+        } else {
+          myButton.value = 'Clicked ' + numOfClicks + ' Times';
+        }
+      }
+
+      myButton.addEventListener('click', myButtonClick);
+    </script>
+  </body>
+</html>
