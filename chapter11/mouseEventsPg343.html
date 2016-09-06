@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mouse Events</title>
+    <style>
+      body {
+        background-color: #dff263;
+        font-family: Georgia, sans-serif;
+      }
+      .size{
+        width: 350px;
+        height: 100px;
+        font-weight: bold;
+        font-size: 1.5em;
+      }
+      form {
+        text-align: center;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <form name='form1'>
+      <input class='size' type='button' name='myButton' value='Click, hold, and then release.'>
+    </form>
+    <script>
+      var myButton = document.form1.myButton;
+
+      function myButtonMouseup() {
+        myButton.value = 'Mouse Up';
+      }
+
+      function myButtonMousedown() {
+        myButton.value = 'Mouse Down';
+      }
+
+      myButton.addEventListener('mousedown', myButtonMousedown);
+      myButton.addEventListener('mouseup', myButtonMouseup);
+    </script>
+  </body>
+</html>
