@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Chapter 11 | Exercise 1</title>
+    <style>
+      body {
+        background-color: #dff263;
+        font-family: Georgia, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <form name='form1'>
+      Fahrenheit: <input type='text' name='fahrenheit' value='32' size='7'>
+      <br>
+      <input type='button' name='btnToCent' value='Convert to Celsius.' id='celsToFahr'>
+    </form>
+    <div id='output'>
+    </div>
+    <script>
+      // Equation to convert is Celsius = 5/9 (Fahrenheit - 32).
+
+       function celsiusToFahr(degFahr) {
+        var degCels = 5/9 * (degFahr - 32);
+        return degCels;
+      }
+
+      function conversionButton() {
+        var calc = document.form1.fahrenheit;
+        var output = document.getElementsByTagName('DIV')[0].childNodes[0];
+
+        if(isNaN(calc.value) == true || calc.value == '') {
+          output.nodeValue = 'Error: invalid value.'
+        } else {
+          output.nodeValue = celsiusToFahr(calc.value) + ' \xB0C';
+        }
+      }     
+      
+      document.getElementById('celsToFahr').addEventListener('click', conversionButton);
+    </script>
+  </body>
+</html>
