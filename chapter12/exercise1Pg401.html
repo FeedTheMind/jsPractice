@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Chapter 12 | Exercise 1</title>
+    <style>
+      body {
+        background-color: #dff263;
+        font-family: Georgia, sans-serif;
+      }
+      [data-drop-target] {
+        height: 400px;
+        width: 200px;
+        margin: 2px;
+        background-color: gainsboro;
+        float: left;
+      }
+      .drag-enter {
+        border: 2px dashed #000;
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+      }
+      .navy {
+        background-color: navy;
+      }
+      .red {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-drop-target='true'>
+      <div id='box1' draggable='true' class='box navy'></div>
+      <div id='box2' draggable='true' class='box red'></div>
+    </div>
+    <div data-drop-target='true'></div>
+    <script>
+      function inclusiveNumbers(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      
+      function handleDragStart(e) {
+        var data = {
+          elementId: this.id,
+          message: [
+            'You moved an element.',
+            'If only "moving" were this easy.',
+            'I feel out of my "element."'
+          ]
+        };
+
+        e.dataTransfer.setData('text', JSON.stringify(data));
+      }
+
+      function handleDragEnterLeave(e) {
+        if (e.type == 'dragenter') {
+          this.className = 'drag-enter';
+        } else {
+          this.className = '';
+        }
+      }
+
+      function handleOverDrop(e) {
+        e.preventDefault();
+
+        if (e.type != 'drop') {
+          return;
+        }
+
+        var json = e.dataTransfer.getData('text');
+        var data = JSON.parse(json);
+
+        var draggedE1 = document.getElementById(data.elementId);
+
+        if (draggedE1.parentNode == this) {
+          this.className = '';
+          return;
+        }
+
+        draggedE1.parentNode.removeChild(draggedE1);
+
+        this.appendChild(draggedE1);
+        this.className = '';
+
+        alert(data.message[inclusiveNumbers(0, 2)]);
+      }
+
+      var draggable = document.querySelectorAll('[draggable]');
+      var targets = document.querySelectorAll('[data-drop-target]');
+
+      for (var i = 0; i < draggable.length; i++) {
+        draggable[i].addEventListener('dragstart', handleDragStart);
+      }
+
+      for (i = 0; i < targets.length; i++) {
+        targets[i].addEventListener('dragover', handleOverDrop);
+        targets[i].addEventListener('drop', handleOverDrop);
+        targets[i].addEventListener('dragenter', handleDragEnterLeave);
+        targets[i].addEventListener('dragleave', handleDragEnterLeave);
+      }
+    </script>
+  </body>
+</html>
