@@ -1,0 +1,57 @@
+<!-- 
+
+FizzBuzz
+
+Write a program that uses console.log to print all the numbers from 1 to 100, with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead.
+
+When you have that working, modify your program to print "FizzBuzz", for numbers that are divisible by both 3 and 5 (and still print "Fizz" or "Buzz" for numbers divisible by only one of those).
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-color: #dff263;  
+        font-family: Georgia, sans-serif;
+      }
+    </style>
+    <title>FizzBuzz</title>
+  </head>
+  <body>
+    <h1>Open the console to display answer.</h1>
+    <script>
+      // Iterate with a For Loop | First Solution
+      for (var i = 1; i <= 100; i++) {
+        // Log string if condition is true; otherwise, move to next condition
+        if (i % 15 === 0) {
+          console.log('FizzBuzz');
+        } else if (i % 3 === 0) {
+          console.log('Fizz');
+        } else if (i % 5 === 0) {
+          console.log('Buzz');
+          // Log numeric value if no condition is fulfilled 
+        } else {
+          console.log(i);
+        }
+      }
+      // Iterate with a While Loop | Second Solution
+      var x = 1;
+
+      while (x <= 100) {
+         if (x % 15 === 0) {
+          console.log('FizzBuzz');
+        } else if (x % 3 === 0) {
+          console.log('Fizz');
+        } else if (x % 5 === 0) {
+          console.log('Buzz');
+        } else {
+          console.log(x);
+        }
+        // Use increment operator to break from loop
+        x++;
+      }
+    </script>  
+  </body>
+</html>
