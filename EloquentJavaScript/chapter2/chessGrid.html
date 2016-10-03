@@ -17,7 +17,7 @@ Passing this string to console.log should show something like this:
 # # # #
 When you have a program that generates this pattern, define a variable size = 8 and 
 change the program so that it works for any size, outputting a grid of the given width 
-and height. (and still print "Fizz" or "Buzz" for numbers divisible by only one of those).
+and height.
 
 -->
 
@@ -33,9 +33,53 @@ and height. (and still print "Fizz" or "Buzz" for numbers divisible by only one 
     <title>Chess Grid</title>
   </head>
   <body>
-    <!-- Insert <h1> -->
+    <h1>Open the console to display answers.</h1>
     <script>
+      // First solution | While and For Loop
+
+      // Use commas to separate multiple variables 
+      var size = 8, chessGrid = '', i = 0;
       
+      // Create outer loop with while loop
+      while (i < size) {
+        // Create inner loop with for loop
+        for (var j = 0; j < size; j++) {
+          // Use conditional with % operator to determine if variable is positive or negative
+            // Also, wrap i and j in parenthesis; otherwise, order of operations will be skewed 
+          if ((i + j) % 2 == 0) {
+            chessGrid += ' ';
+          } else {
+            chessGrid += '#';
+          }
+        }
+        // Add newline character once outside of inner loop; increment i variable
+        chessGrid += '\n';
+        i++
+      }
+      console.log(chessGrid);
+
+      // Second Solution | Two For Loops
+
+      // As before, use commas to separate multiple variables
+        // Also, var keyword has been removed because of global variables
+      size = 8, chessGrid = '';
+
+      // Use inner and outer loops as before; however,
+        // two for loops is more concise
+      for (var i = 0; i < size; i++) {
+
+        for (var j = 0; j < size; j++) {
+          // As before, conditional with i and j wrapped to avoid skewed result
+          if ((i + j) % 2 == 0) {
+            chessGrid += ' ';
+          } else {
+            chessGrid += '#';
+          }
+        }
+        // Add newline character; ignore incrementing i variable
+        chessGrid += '\n';
+      }
+      console.log(chessGrid);
     </script>  
   </body>
 </html>
