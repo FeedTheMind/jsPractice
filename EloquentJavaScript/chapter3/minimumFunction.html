@@ -23,8 +23,31 @@ console.log(min(0, -10));
     <title>Minimum Function</title>
   </head>
   <body>
-    <!-- Insert <h1> -->
+    <h1>Open the console to display the answers.</h1>
     <script>
+      // First Solution | Function with Ternary Operator
+
+      // Create a function declaration, populated with two parameters
+      function minimumValue (a, b) {
+        // Use ternary operator with conditional to determine smaller number 
+         return (a < b) ? a:b;
+      }
+      // Log value to the console
+      console.log(minimumValue(0, 10));
+
+      // Second Solution | Function with If-Else Statement
+
+      // Create a function expression, populated with two parameters 
+      var minimumVal = function (a, b) {
+        // Use if-else statement to determine minimum value
+        if (a < b) {
+          return a;
+        } else {
+          return b;
+        }
+      }
+      // Log value to the console
+      console.log(minimumVal(0, -10));
 
     </script>  
   </body>
