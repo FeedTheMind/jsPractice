@@ -38,9 +38,58 @@ console.log(isEven(-1));
     <title>Recursion</title>
   </head>
   <body>
-    <!-- Insert <h1> -->
+    <h1>Open the console to display the answers.</h1>
     <script>
+      // Solution One | Use Recursion to Solve Issue
+      function isEven(n) {
+        // Return true if n equals zero, as this indicates even
+        if (n === 0) {
+          return true;
+        // Return false if n equals one, as this indicates odd
+        } else if (n === 1) {
+          return false;
+        // To convert negative value to positive, "subtract" from n, as two negatives
+          // make a positive; recursion will eventually yield 1, producing false
+        } else if (n < 0) {
+          return isEven(-n);
+        // Subtract two from n; recursion will eventually yield zero, producing true
+        } else {
+          return isEven(n - 2);
+        }
+      }
 
+      console.log(isEven(50));
+      console.log(isEven(75));
+      console.log(isEven(-4));
+      console.log(isEven(-3));
+
+      // Solution Two | Use Function with While Loop
+
+      function isNumbEven(n) {
+        // Set number to n
+        var number = n;
+
+        // Turn negative value positive
+        if (number < 0) {
+          number = -number;
+        }
+
+        // Use while loop to loop until either condition is met
+        while (number >= 0) {
+          if (number === 1) {
+            return false;
+          } else if (number === 0) {
+            return true;
+          } 
+        // 
+          number -= 2;
+        }
+      }
+
+      console.log(isNumbEven(-11));
+      console.log(isNumbEven(-10));
+      console.log(isNumbEven(-9));
+      console.log(isNumbEven(-8));
     </script>  
   </body>
 </html>
