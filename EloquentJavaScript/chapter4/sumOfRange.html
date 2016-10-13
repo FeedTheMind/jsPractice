@@ -43,9 +43,72 @@ console.log(sum(range(1, 10)));
     <title>Sum of a Range</title>
   </head>
   <body>
-    <!-- Insert h1 -->
+    <h1>Open the console to display the answers.</h1>
     <script>
-      
+      // Solution 1 | Function with For Loop
+
+      // Create a function with start and end parameters 
+      function range(start, end) {
+        // Initialize variable to an empty array
+        var allNumbersArray = [];
+
+        // Iterate over values, assigning start to i and making i less than or equal to end
+          // Increment by one
+        for (var i = start; i <= end; i++) {
+          // Use push() method to "push" value to array
+          allNumbersArray.push(i);
+        }
+        // Return array with pushed values
+        return allNumbersArray;
+      }
+
+      function sum(arr) {
+        // Initialize variable to zero
+        var summation = 0;
+
+        // Iterate over elements
+        for (var i = 0; i < arr.length; i++) {
+          // Add current index to summation
+          summation += arr[i];
+        }
+        // Return summation once loop has finished 
+        return summation;
+      }
+
+      console.log(range(1, 10));
+
+      console.log(sum(range(1, 10)));
+
+      // Solution 2 | Bonus Assignment
+
+
+      function rangeBonus(start, end, step) {
+        
+        var allNumbersArray = [];
+
+        if (step > 1) {
+          // If step is greater than one, increase i by step
+          for (var i = start; i <= end; i += step) {
+            allNumbersArray.push(i);
+          }
+        } else if (step < 0) {
+          // If step is less than zero, "decrease" i by step
+          for (var i = start; i >= end; i += step) {
+            allNumbersArray.push(i);
+          }
+        } else {
+          // Else increment by i by one
+          for (var i = start; i <= end; i++) {
+            allNumbersArray.push(i);
+          }
+        }
+       
+        return allNumbersArray;
+      }
+
+      console.log(rangeBonus(3, 21, 3));
+      console.log(rangeBonus(5, 2, -1));
+      console.log(rangeBonus(1, 8));
     </script>  
   </body>
 </html>
