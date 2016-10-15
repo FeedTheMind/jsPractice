@@ -55,6 +55,27 @@ console.log(arrayValue);
 
       console.log(reverseArray([1, 2, 3, 4, 5, 6, 7]));
       console.log(reverseArray(['A', 'B', 'C']));
+
+      // Second Function | reverseArrayInPlace
+      function reverseArrayInPlace(arr) {
+        // Loop through array
+          // Use Math.floor() to round down
+        for (var i = 0; i < Math.floor(arr.length / 2); i++) {
+          // Use temp variable to store reference to arr
+          var temp = arr[i];
+          // Swap first index with last index
+            // Subtract subsequent index values with i
+          arr[i] = arr[arr.length - 1 - i];
+          // Swap last index with first index
+          arr[arr.length - 1 - i] = temp;
+
+        }
+        // Return arr
+        return arr;
+      }
+
+      console.log(reverseArrayInPlace([1, 2, 3, 4, 5]));
+      console.log(reverseArrayInPlace(['C', 'B', 'A']))
     </script>  
   </body>
 </html>
