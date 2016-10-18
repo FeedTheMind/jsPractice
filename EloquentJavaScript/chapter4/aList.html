@@ -59,9 +59,42 @@ console.log(nth(arrayToList([10, 20, 30]), 1));
     <title>A List</title>
   </head>
   <body>
-    <!-- <h1>Open the console to display the answers.</h1> -->
+    <h1>Open the console to display the answers.</h1>
     <script>
-    
+    // First Function | arrayToList 
+
+      function arrayToList(arr) {
+        // Initialize variable to null
+          // Ensures last "rest" will be null
+        var list = null;
+        // So that the last element has null, use decrement operator
+        for (var i = arr.length - 1; i >= 0; i--) {
+          list = {
+            // At the first iteration, list is equal to null
+            value: arr[i], rest: list
+          };
+        }
+        // Return list once looping has ceased 
+        return list;
+      }
+
+      // Second Function | listToArray
+
+      function listToArray(list) {
+        // Initialize variable to empty array;
+        var array = [];
+        // Iterate through loop until obj equals null
+          // Null is a falsy value
+        for (var obj = list; obj; obj = obj.rest) {
+          // Push obj value to array
+          array.push(obj.value);
+        }
+        // Return array, with values
+        return array;
+      } 
+
+      console.log(arrayToList([10, 20]));
+      console.log(listToArray(arrayToList([10, 20, 30])))
     </script>  
   </body>
 </html>
