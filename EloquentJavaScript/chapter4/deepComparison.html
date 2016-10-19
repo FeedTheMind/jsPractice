@@ -39,9 +39,50 @@ console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
     <title>Deep Comparison</title>
   </head>
   <body>
-    <!-- <h1>Open the console to display the answers.</h1> -->
+    <h1>Open the console to display the answers.</h1>
     <script>
-    
+      // Function | deepEqual
+
+      var obj = {here: {is: "an"}, object: 2};
+
+      function deepEqual(obj1, obj2) {
+        // Use strict operator to check if types are equivalent 
+          // Comparison operator (==) will produce true if one is null 
+        if (obj1 === obj2) {
+          return true;
+        }
+        // Return false, as null represents "empty"
+        if (obj1 == null || obj2 == null) {
+          return false;
+        }
+        
+        if (typeof obj1 === 'object' && typeof obj2 === 'object') { 
+          // Object.keys() returns an array of enumerable properties 
+          var keys1 = Object.keys(obj1);
+          var keys2 = Object.keys(obj2);
+
+          if (keys1.length !== keys2.length) { 
+            // Return false if lengths aren't equivalent 
+            return false;
+          }
+          // Iterate with a for-in loop
+          for (var prop in obj1) { 
+            // Use recursion to cycle through property-value pairs
+            if (deepEqual(obj1[prop], obj2[prop]) === false) { 
+              return false;
+            }
+          }
+          return true; 
+        }
+        // Return false if typeof 'object' not equal to 'object'
+        return false;
+      }
+
+      console.log(deepEqual(20, 20));
+      console.log(deepEqual(obj, obj));
+      console.log(deepEqual(obj, {here: 1, object: 2}));
+      console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
+
     </script>  
   </body>
 </html>
