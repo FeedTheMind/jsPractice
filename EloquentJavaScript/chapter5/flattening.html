@@ -24,9 +24,15 @@ var arrays = [[1, 2, 3], [4, 5], [6]];
     <title>Flattening</title>
   </head>
   <body>
-    <!-- <h1>Open the console to display the answers.</h1> -->
+    <h1>Open the console to display the answer.</h1>
     <script>
-     
+      // Function | reduce() and concat()
+      var arrays = [[1, 2, 3], [4, 5], [6], [7]];
+
+      // Remove start parameter if array contains at least one element
+      console.log(arrays.reduce(function(a, b) {
+        return a.concat(b);
+      }, []));
     </script>  
   </body>
 </html>
