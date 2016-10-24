@@ -40,9 +40,32 @@ ancestry.forEach(function(person) {
     <title>Age Difference | Mother, Child</title>
   </head>
   <body>
-    <!-- <h1>Open the console to display the answers.</h1> -->
+    <h1>Open the console to display the answer.</h1>
+    <script src='ancestryFile.js'></script>
     <script>
-     
+      // Solution | Age Difference 
+
+      // Use function from directions
+        // Parse ancestryFile.js
+      var ancestryParse = JSON.parse(ANCESTRY);
+
+      function average(array) {
+        function plus(a, b) { return a + b; }
+        return array.reduce(plus) / array.length;
+      }
+      // Again, use function from directions
+      var byName = {};
+      ancestryParse.forEach(function(person) {
+        byName[person.name] = person;
+      });
+
+      var differences = ancestryParse.filter(function(person) {
+        return byName[person.mother] != null;
+      }).map(function(person) {
+        return person.born - byName[person.mother].born;
+      });
+
+      console.log(average(differences));
     </script>  
   </body>
 </html>
