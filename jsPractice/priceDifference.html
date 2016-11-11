@@ -1,1 +1,55 @@
-<!-- Create a function that returns the price difference. -->
+<!-- Create a function that returns the price and percentage difference. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: linen;
+      }
+    </style>
+    <title>Price and Percentage Difference</title>
+  </head>
+  <body>
+    <h1>Open the console to find differences in prices and percentages.</h1>
+    <script>
+      // Log simple directions to the console
+      console.log('Use the priceDifference(originalVal, newVal) function to ' + 
+        'calculate different prices and percentages.'
+      );
+
+      function priceDifference(originalVal, newVal) {
+        if (newVal > originalVal) {
+          var increase = newVal - originalVal;
+        } else {
+          var decrease = originalVal - newVal;
+        }
+
+        // Test for "truthy" value
+        if (increase) {
+          var perctInc = (increase / originalVal) * 100;
+
+          // After determining perctInc, fix decimals if condition true
+          if (increase % 1 != 0) {
+            increase = increase.toFixed(2);
+          }
+          // Log results to console, fixing percentage to two decimal places
+          console.log('The original value (' + '$' + originalVal + ') has increased by ' +
+            '$' + increase + ', a ' + perctInc.toFixed(2) + '% increase.'
+          );
+        } else {
+          var perctDec = (decrease / originalVal) * 100;
+
+          // After determining perctDec, fix decimals if condition true
+          if (decrease % 1 != 0) {
+            decrease = decrease.toFixed(2);
+          }
+          // Log results to console, fixing percentage to two decimal places
+          console.log('The original price (' + '$' + originalVal + ') has decreased by ' +
+            '$' + decrease + ', a ' + perctDec.toFixed(2) + '% decrease.'
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
