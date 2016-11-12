@@ -1,5 +1,5 @@
 <!-- Create a function that returns the price and percentage difference. -->
-<!-- Ideas: 1) Have a/an?, 2) Zero divide?, etc -->
+<!-- Ideas: 1) Have a/an?, 2) Zero divide?, 3) Flexbox, 4) JS, etc -->
 
 <!DOCTYPE html>
 <html>
@@ -15,20 +15,29 @@
     <h1>Open the console to find differences in prices and percentages.</h1>
     <script>
       // Log simple directions to the console
-      console.log('Use the priceDifference(originalVal, newVal) function to ' + 
-        'calculate different prices and percentages.'
+      console.log('Use the priceDifference(originalVal, newVal) function to ' +
+        'calculate different prices and percentages. Example: priceDifference(1, 11);'
       );
 
       function priceDifference(originalVal, newVal) {
-        if (newVal > originalVal) {
-          var increase = newVal - originalVal;
-        } else {
-          var decrease = originalVal - newVal;
+        // Change a to an if needed
+        var article = 'a ';
+
+        // Write condition that logs error to console
+        if (originalVal <= 0) {
+          return console.log('Error: to calculate percentage difference,' + 
+            ' the original value needs to be greater than zero.'
+          );
         }
 
-        // Test for "truthy" value
-        if (increase) {
+        if (newVal > originalVal) {
+          var increase = newVal - originalVal;
+
           var perctInc = (increase / originalVal) * 100;
+
+          if (perctInc.toString().charAt(0) == 8) {
+            article = 'an ';
+          }
 
           // After determining perctInc, fix decimals if condition true
           if (increase % 1 != 0) {
@@ -36,10 +45,16 @@
           }
           // Log results to console, fixing percentage to two decimal places
           console.log('The original value (' + '$' + originalVal + ') has increased by ' +
-            '$' + increase + ', a ' + perctInc.toFixed(2) + '% increase.'
+            '$' + increase + ', ' + article + perctInc.toFixed(2) + '% increase.'
           );
         } else {
+          var decrease = originalVal - newVal;
+
           var perctDec = (decrease / originalVal) * 100;
+
+          if (perctDec.toString().charAt(0) == 8) {
+            article = 'an ';
+          }
 
           // After determining perctDec, fix decimals if condition true
           if (decrease % 1 != 0) {
@@ -47,7 +62,7 @@
           }
           // Log results to console, fixing percentage to two decimal places
           console.log('The original price (' + '$' + originalVal + ') has decreased by ' +
-            '$' + decrease + ', a ' + perctDec.toFixed(2) + '% decrease.'
+            '$' + decrease + ', ' + article + perctDec.toFixed(2) + '% decrease.'
           );
         }
       }
