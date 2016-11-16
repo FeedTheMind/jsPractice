@@ -1,3 +1,5 @@
 body {
-  background-color: linen;
+  background: #b3b3cc; /* Fallback for older browsers */
+  background: linear-gradient(to left, #c2c2d6, #9494b8);
+  color: #333;
 }
