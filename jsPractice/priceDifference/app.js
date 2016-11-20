@@ -8,7 +8,9 @@ function priceDifference(originalVal, newVal) {
   var article = 'a ';
 
   // Write condition that logs error to console
-  if (originalVal <= 0) {
+  if (isNaN(originalVal) || isNaN(newVal)) {
+    return console.log('Error: please, provide only numeric data.')
+  } else if (originalVal <= 0) {
     return console.log('Error: to calculate percentage difference,' + 
       ' the original value needs to be greater than zero.'
     );
