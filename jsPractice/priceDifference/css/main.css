@@ -1,14 +1,8 @@
 /****************
 General
 ****************/
-
 body {
   font-family: Georgia, sans-serif;
-}
-
-header h1 {
-  margin-top: 0;
-  font-family: 'Neuton';
 }
 
 #wrapper {
@@ -19,21 +13,47 @@ header h1 {
 /****************
 Heading
 ****************/
-
-header {
+.header {
+  font-family: 'Neuton';
   text-align: center;
+  padding-bottom: 3px;
+}
+
+/****************
+#wrapper
+****************/
+#wrapper {
+  font-size: 1.2em;
+}
+
+#wrapper section {
+  padding-left: 5px;
+  padding-right: 5px;
+  display: inline-block;
+}
+
+/****************
+.anAside
+****************/
+.anAside {
+  font-size: .3em;
 }
 
 /****************
 Colors
 ****************/
-
 body {
   background: #b3b3cc; /* Fallback for older browsers */
   background: linear-gradient(to left, #c2c2d6, #9494b8);
   color: #333;
 }
 
-header {
+.header {
   background: rgba(230, 230, 230, 0.4);
+  border-top: 1px solid #1A1A56;
+  border-bottom: 1px solid #1A1A56;
+}
+
+#wrapper section {
+  background: rgba(211, 211, 211, .9);
 }
