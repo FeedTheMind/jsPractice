@@ -16,20 +16,18 @@ Heading
 .header {
   font-family: 'Neuton';
   text-align: center;
-  padding-bottom: 3px;
 }
 
 /****************
-#wrapper
+#wrapper,
+.sectionOne
 ****************/
 #wrapper {
   font-size: 1.2em;
 }
 
-#wrapper section {
-  padding-left: 5px;
-  padding-right: 5px;
-  display: inline-block;
+.sectionOne {
+  padding: 0.1px 8px;
 }
 
 /****************
@@ -42,6 +40,7 @@ Heading
 /****************
 Colors
 ****************/
+
 body {
   background: #b3b3cc; /* Fallback for older browsers */
   background: linear-gradient(to left, #c2c2d6, #9494b8);
