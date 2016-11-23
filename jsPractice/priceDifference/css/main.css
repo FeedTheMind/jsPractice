@@ -3,11 +3,16 @@ General
 ****************/
 body {
   font-family: Georgia, sans-serif;
+  font-size: 1em;
 }
 
 #wrapper {
   max-width: 950px;
   margin: 0 auto;
+}
+
+p {
+  line-height: 1.4;
 }
 
 /****************
