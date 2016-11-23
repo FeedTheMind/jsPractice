@@ -1,3 +1,4 @@
+// Add addEventListener() and return to "input" in index.html file
 // Log simple directions to the console
 console.log('Use the priceDifference(originalVal, newVal) function to ' +
   'calculate different prices and percentages. Example: priceDifference(1, 11);'
