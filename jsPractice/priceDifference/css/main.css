@@ -21,18 +21,31 @@ Heading
 .header {
   font-family: 'Neuton';
   text-align: center;
+  text-shadow: 2px 5px 20px #222;
 }
 
 /****************
 #wrapper,
-.sectionOne
-****************/
+.sectionOne,
+button & input
+*****************/
 #wrapper {
   font-size: 1.2em;
 }
 
 .sectionOne {
-  padding: 0.1px 8px;
+  padding: 0.1px 8px 8px;
+}
+
+.styleButton {
+  padding: 2px;
+  width: 70px;
+}
+
+.styleInput {
+  padding: 2px;
+  width: 100px;
+  background: lightgray;
 }
 
 /****************
@@ -48,7 +61,7 @@ Colors
 
 body {
   background: #b3b3cc; /* Fallback for older browsers */
-  background: linear-gradient(to left, #c2c2d6, #9494b8);
+  background: linear-gradient(to left, #61456A, #9494b8);
   color: #333;
 }
 
@@ -59,5 +72,5 @@ body {
 }
 
 #wrapper section {
-  background: rgba(211, 211, 211, .9);
+  background: rgba(211, 211, 211, .5);
 }
