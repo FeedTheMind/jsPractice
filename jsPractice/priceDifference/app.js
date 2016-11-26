@@ -1,8 +1,23 @@
-// Add addEventListener() and return to "input" in index.html file
-// Log simple directions to the console
-console.log('Use the priceDifference(originalVal, newVal) function to ' +
-  'calculate different prices and percentages. Example: priceDifference(1, 11);'
-);
+'use strict';
+
+var buttonClick = document.getElementById('clickClickBoom');
+var outputResult = document.getElementById('output');
+var currentPrice = document.getElementById('currentPrice');
+var newPrice = document.getElementById('newPrice');
+var inputs = document.getElementsByClassName('inputResult');
+
+buttonClick.addEventListener('click', function () {
+  priceDifference(currentPrice.value, newPrice.value);
+});
+
+// Combine for loop with handler for input fields
+for (var i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener('keypress', function (e) {
+    if (e.keyCode == 13) {
+      priceDifference(currentPrice.value, newPrice.value);
+    }
+  });
+}
 
 function priceDifference(originalVal, newVal) {
   // Change a to an if needed
@@ -10,11 +25,10 @@ function priceDifference(originalVal, newVal) {
 
   // Write condition that logs error to console
   if (isNaN(originalVal) || isNaN(newVal)) {
-    return console.log('Error: please, provide only numeric data.')
+    return outputResult.textContent = 'Error: please, provide only numeric data.';
   } else if (originalVal <= 0) {
-    return console.log('Error: to calculate percentage difference,' + 
-      ' the original value needs to be greater than zero.'
-    );
+    return outputResult.textContent = 'Error: to calculate percentage difference,' +
+      ' the current price needs to be greater than zero.';
   }
 
   if (newVal > originalVal) {
@@ -31,9 +45,8 @@ function priceDifference(originalVal, newVal) {
       increase = increase.toFixed(2);
     }
     // Log results to console, fixing percentage to two decimal places
-    console.log('The original value (' + '$' + originalVal + ') has increased by ' +
-      '$' + increase + ', ' + article + perctInc.toFixed(2) + '% increase.'
-    );
+    outputResult.textContent = 'The original value (' + '$' + originalVal + ') has increased by ' +
+      '$' + increase + ', ' + article + perctInc.toFixed(2) + '% increase.';
   } else {
     var decrease = originalVal - newVal;
 
@@ -48,8 +61,7 @@ function priceDifference(originalVal, newVal) {
       decrease = decrease.toFixed(2);
     }
     // Log results to console, fixing percentage to two decimal places
-    console.log('The original price (' + '$' + originalVal + ') has decreased by ' +
-      '$' + decrease + ', ' + article + perctDec.toFixed(2) + '% decrease.'
-    );
+    outputResult.textContent ='The current price (' + '$' + originalVal + ') has decreased by ' +
+      '$' + decrease + ', ' + article + perctDec.toFixed(2) + '% decrease.';
   }
 }
