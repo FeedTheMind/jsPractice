@@ -8,6 +8,8 @@ var inputs = document.getElementsByClassName('inputResult');
 
 buttonClick.addEventListener('click', function () {
   priceDifference(currentPrice.value, newPrice.value);
+  // Once user has "clicked", place focus on first input
+  inputs[0].focus();
 });
 
 // Combine for loop with handler for input fields
@@ -15,16 +17,21 @@ for (var i = 0; i < inputs.length; i++) {
   inputs[i].addEventListener('keypress', function (e) {
     if (e.keyCode == 13) {
       priceDifference(currentPrice.value, newPrice.value);
+      // Once user has "enter"-ed, place focus on first input
+      inputs[0].focus();
     }
   });
 }
 
 function priceDifference(originalVal, newVal) {
+  // Clear value once "clicked" or "enter"-ed (keypress)
+  currentPrice.value = '';
+  newPrice.value = '';
   // Change a to an if needed
   var article = 'a ';
 
-  // Write condition that logs error to console
-  if (isNaN(originalVal) || isNaN(newVal)) {
+  // Write condition that logs error to document if conditions are true
+  if ( (isNaN(originalVal) || isNaN(newVal) ) || ( originalVal == '' && newVal == '') ) {
     return outputResult.textContent = 'Error: please, provide only numeric data.';
   } else if (originalVal <= 0) {
     return outputResult.textContent = 'Error: to calculate percentage difference,' +
