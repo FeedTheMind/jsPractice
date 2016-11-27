@@ -52,7 +52,7 @@ function priceDifference(originalVal, newVal) {
       increase = increase.toFixed(2);
     }
     // Log results to console, fixing percentage to two decimal places
-    outputResult.textContent = 'The original value (' + '$' + originalVal + ') has increased by ' +
+    outputResult.textContent = 'The current price (' + '$' + originalVal + ') has increased by ' +
       '$' + increase + ', ' + article + perctInc.toFixed(2) + '% increase.';
   } else {
     var decrease = originalVal - newVal;
