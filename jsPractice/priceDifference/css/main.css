@@ -40,23 +40,17 @@ Heading
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: lightgreen;
-  color: rgb(13, 13, 13);
   outline: none;
   cursor: pointer;
   font-family: Georgia;
-}
-
-.styleButton:hover, .styleButton:focus {
-  border: 5px solid #50394c;
 }
 
 .styleInput {
   padding: 2px;
   width: 100px;
   border-radius: 10px;
-  background: lightgray;
   font-family: Georgia;
+  outline: none;
 }
 
 #output {
@@ -95,6 +89,20 @@ body {
 
 .mainWrapper {
   background: rgba(211, 211, 211, .5);
+}
+
+.styleButton {
+  background: lightgreen;
+  color: rgb(13, 13, 13);
+}
+
+.styleInput { background: lightgray; }
+
+/* Set outline to "none", but add solid border for better visual aid */
+.styleButton:hover,
+.styleButton:focus,
+.styleInput:focus {
+  border: 3px solid #50394c;
 }
 
 footer {
