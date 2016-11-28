@@ -30,6 +30,7 @@ function priceDifference(originalVal, newVal) {
   // Change a to an if needed
   var article = 'a ';
 
+
   // Write condition that logs error to document if conditions are true
   if ( (isNaN(originalVal) || isNaN(newVal) ) || ( originalVal == '' && newVal == '') ) {
     return outputResult.textContent = 'Error: please, provide only numeric data.';
@@ -38,7 +39,11 @@ function priceDifference(originalVal, newVal) {
       ' the current price needs to be greater than zero.';
   }
 
-  if (newVal > originalVal) {
+  /*
+    Multiply by one to convert
+    strings (newVal and originalVal) to numbers
+  */
+  if ( (newVal * 1) > (originalVal * 1) ) {
     var increase = newVal - originalVal;
 
     var perctInc = (increase / originalVal) * 100;
