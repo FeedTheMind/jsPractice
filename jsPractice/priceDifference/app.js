@@ -30,6 +30,9 @@ function priceDifference(originalVal, newVal) {
   // Change a to an if needed
   var article = 'a ';
 
+  // "Trim" whitespace before and after values
+  originalVal = originalVal.trim();
+  newVal = newVal.trim();
 
   // Write condition that logs error to document if conditions are true
   if ( (isNaN(originalVal) || isNaN(newVal) ) || ( originalVal == '' && newVal == '') ) {
