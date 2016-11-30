@@ -55,6 +55,7 @@ Heading
 
 #output {
   padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 /****************
@@ -125,5 +126,11 @@ Queries
     max-width: 1000px;
     margin: 0 auto;
     font-size: 1.2em;
+  }
+
+  .styleInput {
+    display: inline-block;
+    padding: 4px;
+    margin-left: 5px;
   }
 }
