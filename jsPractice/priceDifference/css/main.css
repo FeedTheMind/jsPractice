@@ -133,4 +133,8 @@ Queries
     padding: 4px;
     margin-left: 5px;
   }
+
+  .mainHeader {
+    font-size: 1.2em;
+  }
 }
